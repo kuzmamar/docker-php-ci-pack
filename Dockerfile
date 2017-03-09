@@ -2,7 +2,7 @@ FROM php:latest
 
 MAINTAINER Jakub Janata <jakubjanata@gmail.com>
 
-RUN apt-get update && apt-get install -y unzip wget mysql-client postgresql-client
+RUN apt-get update && apt-get install -y unzip wget mysql-client postgresql-client git
 
 # Install Mysql + Postgre PDO
 RUN apt-get install -y libpq-dev \
