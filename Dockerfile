@@ -18,5 +18,5 @@ RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 # Install composer
 RUN wget https://getcomposer.org/composer.phar -q \
     && mv composer.phar /usr/local/bin/composer \
-    && chmod a+x /usr/local/bin/composer
+    && chmod a+x /usr/local/bin/composer \
     && composer --version
