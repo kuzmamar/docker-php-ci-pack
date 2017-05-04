@@ -19,4 +19,5 @@ RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 RUN wget https://getcomposer.org/composer.phar -q \
     && mv composer.phar /usr/local/bin/composer \
     && chmod a+x /usr/local/bin/composer \
-    && composer --version
+    && composer --version \
+    && composer global require hirak/prestissimo
