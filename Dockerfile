@@ -19,7 +19,7 @@ RUN wget https://github.com/phpredis/phpredis/archive/develop.zip \
     && ./configure \
     && make \
     && make install \
-    && echo "extension=redis.so" /usr/local/etc/php/conf.d/redis.ini
+    && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
 
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
@@ -30,3 +30,4 @@ RUN wget https://getcomposer.org/composer.phar -q \
     && chmod a+x /usr/local/bin/composer \
     && composer --version \
     && composer global require hirak/prestissimo
+
