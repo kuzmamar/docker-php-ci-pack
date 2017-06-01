@@ -12,6 +12,15 @@ RUN apt-get install -y libpq-dev \
 # Install PHP extensions
 RUN docker-php-ext-install zip
 
+RUN wget https://github.com/phpredis/phpredis/archive/develop.zip \
+    && unzip develop.zip \
+    && cd phpredis-develop \
+    && phpize \
+    && ./configure \
+    && make \
+    && make install \
+    && echo "extension=redis.so" /usr/local/etc/php/conf.d/redis.ini
+
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 
